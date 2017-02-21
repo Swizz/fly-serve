@@ -1,7 +1,7 @@
 {
   "name": "fly-serve",
   "version": "0.0.1",
-  "description": "A plugin for Fly that serve your target directory",
+  "description": "A plugin for Fly to serve your awesomeness",
   "keywords": [
     "fly",
     "fly-plugin",
@@ -15,15 +15,20 @@
     "LICENSE"
   ],
   "dependencies": {
+    "fly": "^2.0.5",
     "serve": "^3.4.1"
   },
   "devDependencies": {
-    "fly": "^2.0.2",
     "xo": "^0.17.1"
   },
   "xo": {
     "semicolon": false,
     "space": true
+  },
+  "fly": {
+    "requires": [
+      "./index.js"
+    ]
   },
   "scripts": {
     "lint": "xo"

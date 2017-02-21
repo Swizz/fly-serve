@@ -4,29 +4,36 @@
   </a>
 </div>
 
-> [ava](https://github.com/sindresorhus/ava) plugin for _[Fly][fly]_.
+> [zeit/serve](https://github.com/zeit/serve) plugin for _[Fly][fly]_.
 
 [![][fly-badge]][fly]
-[![npm package][npm-ver-link]][npm-pkg-link]
+[![][mit-badge]][mit]
+<!-- [![npm package][npm-ver-link]][npm-pkg-link]
 [![][travis-badge]][travis-link]
 [![][appveyor-badge]][appveyor-link]
 [![][climate-badge]][climate-link]
 [![][david-badge]][david-link]
-[![][david-dev-badge]][david-dev-link]
+[![][david-dev-badge]][david-dev-link] -->
 
 
-## Getting Started
+## Getting Started (Not yet !)
 This plugin requires [fly](https://github.com/bucaran/fly).
 
+Using yarn
 ```sh
-$ npm i fly-ava -D
+$ yarn add --dev fly-serve
+```
+
+using NPM
+```sh
+$ npm install --save-dev fly-serve
 ```
 
 ## Usage examples
 
 ```js
-exports.default = function* () {
-  yield this.source('./test/*.js').ava()
+exports.serve = function* () {
+  yield this.source('./test/').serve()
 }
 ```
 
@@ -34,11 +41,11 @@ exports.default = function* () {
 MIT License
 
 [mit]:             http://opensource.org/licenses/MIT
-[author]:          https://github.com/pine
-[fly]:             https://github.com/bucaran/fly
+[author]:          https://github.com/swizz
+[fly]:             https://github.com/flyjs/fly
 [fly-badge]:       https://img.shields.io/badge/fly-JS-05B3E1.svg?style=flat-square
 [mit-badge]:       https://img.shields.io/badge/license-MIT-444444.svg?style=flat-square
-[npm-pkg-link]:    https://www.npmjs.org/package/fly-ava
+<!-- [npm-pkg-link]:    https://www.npmjs.org/package/fly-ava
 [npm-ver-link]:    https://img.shields.io/npm/v/fly-ava.svg?style=flat-square
 [travis-link]:     https://travis-ci.org/flyjs/fly-ava
 [travis-badge]:    http://img.shields.io/travis/flyjs/fly-ava.svg?style=flat-square
@@ -49,4 +56,4 @@ MIT License
 [david-dev-link]:  https://david-dm.org/flyjs/fly-ava#info=devDependencies&view=table
 [david-dev-badge]: https://img.shields.io/david/dev/flyjs/fly-ava.svg?style=flat-square
 [climate-link]:    https://codeclimate.com/github/flyjs/fly-ava
-[climate-badge]:   https://img.shields.io/codeclimate/github/flyjs/fly-ava.svg?style=flat-square
+[climate-badge]:   https://img.shields.io/codeclimate/github/flyjs/fly-ava.svg?style=flat-square -->
