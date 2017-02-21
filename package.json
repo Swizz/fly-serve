@@ -1,0 +1,35 @@
+{
+  "name": "fly-serve",
+  "version": "0.0.1",
+  "description": "A plugin for Fly that serve your target directory",
+  "keywords": [
+    "fly",
+    "fly-plugin",
+    "serve",
+    "fly-serve"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "*.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "serve": "^3.4.1"
+  },
+  "devDependencies": {
+    "fly": "^2.0.2",
+    "xo": "^0.17.1"
+  },
+  "xo": {
+    "semicolon": false,
+    "space": true
+  },
+  "scripts": {
+    "lint": "xo"
+  },
+  "repository": "github:swizz/fly-serve",
+  "homepage": "https://github.com/swizz/fly-serve",
+  "author": "Swizz (https://github.com/swizz)",
+  "license": "MIT"
+}
