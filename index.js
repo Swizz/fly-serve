@@ -9,17 +9,21 @@ module.exports = {
     const defOpts = Object.assign({
       port: 3000,
       ignore: ['node_modules'],
-      unziped: true
+      unziped: true,
+      silent: true,
+      verbosity: true
     }, opts)
 
     const dir = yield this.$.expand(globs, {mark: true})
 
-    if (dir.length > 1) {
+    if (dir.length > 1 && defOpts.verbosity) {
       this.$.alert(`Only the first found dir will be served`)
     }
 
-    serve(defOpts, dir[0])
+    serve(dir[0], defOpts)
 
-    this.$.log(`${fmt.path(dir[0])} is served on ${fmt.path('localhost:')}${fmt.path(defOpts.port)}`)
+    if (defOpts.verbosity) {
+      this.$.log(`${fmt.path(dir[0])} is served on ${fmt.path('localhost:')}${fmt.path(defOpts.port)}`)
+    }
   }
 }
