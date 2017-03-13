@@ -16,7 +16,7 @@
 [![][david-dev-badge]][david-dev-link] -->
 
 
-## Getting Started (Not yet !)
+## Getting Started
 This plugin requires [fly](https://github.com/bucaran/fly).
 
 Using yarn

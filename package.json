@@ -1,6 +1,6 @@
 {
   "name": "fly-serve",
-  "version": "0.0.1",
+  "version": "0.10.0",
   "description": "A plugin for Fly to serve your awesomeness",
   "keywords": [
     "fly",
