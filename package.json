@@ -36,6 +36,9 @@
     "lint": "xo",
     "test": "ava"
   },
+  "engines": {
+    "node": ">= 4.6"
+  },
   "repository": "github:swizz/fly-serve",
   "homepage": "https://github.com/swizz/fly-serve",
   "author": "Swizz (https://github.com/swizz)",
