@@ -1,5 +1,6 @@
+const clor = require('clor')
 const serve = require('serve')
-const fmt = require('fly/lib/fmt')
+const format = clor.underline.cyan
 
 const defOpts = {
   port: 3000,
@@ -22,7 +23,7 @@ module.exports = function (fly, utils) {
     serve(dir[0], opts)
 
     if (opts.verbosity) {
-      utils.log(`${fmt.path(dir[0])} is served on ${fmt.path('localhost:')}${fmt.path(opts.port)}`)
+      utils.log(`${format(dir[0])} is served on ${format(`localhost:${opts.port}`)}`)
     }
   })
 }
