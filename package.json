@@ -38,7 +38,7 @@
     "test": "ava"
   },
   "engines": {
-    "node": ">= 4.6"
+    "node": ">=6.9.0"
   },
   "repository": "github:swizz/fly-serve",
   "homepage": "https://github.com/swizz/fly-serve",
