@@ -9,23 +9,20 @@ const defOpts = {
   verbosity: true
 }
 
-module.exports = {
-  name: 'serve',
-  every: false,
-  files: false,
-  * func(globs, opts) {
+module.exports = function (fly, utils) {
+  fly.plugin('serve', {every: false, files: false}, function * (globs, opts) {
     opts = Object.assign({}, defOpts, opts)
 
-    const dir = yield this.$.expand(globs, {mark: true})
+    const dir = yield utils.expand(globs, {mark: true})
 
     if (dir.length > 1 && opts.verbosity) {
-      this.$.alert(`Only the first found dir will be served`)
+      utils.alert(`Only the first found dir will be served`)
     }
 
     serve(dir[0], opts)
 
     if (opts.verbosity) {
-      this.$.log(`${fmt.path(dir[0])} is served on ${fmt.path('localhost:')}${fmt.path(opts.port)}`)
+      utils.log(`${fmt.path(dir[0])} is served on ${fmt.path('localhost:')}${fmt.path(opts.port)}`)
     }
-  }
+  })
 }
