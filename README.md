@@ -17,7 +17,7 @@
 
 
 ## Getting Started
-This plugin requires [fly](https://github.com/bucaran/fly).
+This plugin requires [fly](https://github.com/flyjs/fly).
 
 Using yarn
 ```sh
@@ -32,8 +32,8 @@ $ npm install --save-dev fly-serve
 ## Usage examples
 
 ```js
-exports.serve = function* () {
-  yield this.source('./test/').serve()
+exports.serve = function* (fly) {
+  yield fly.source('./test/').serve()
 }
 ```
 

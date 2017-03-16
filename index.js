@@ -1,29 +1,29 @@
+const clor = require('clor')
 const serve = require('serve')
-const fmt = require('fly/lib/fmt')
+const format = clor.underline.cyan
 
-module.exports = {
-  name: 'serve',
-  every: false,
-  files: false,
-  * func(globs, opts) {
-    const defOpts = Object.assign({
-      port: 3000,
-      ignore: ['node_modules'],
-      unziped: true,
-      silent: true,
-      verbosity: true
-    }, opts)
+const defOpts = {
+  port: 3000,
+  ignore: ['node_modules'],
+  unziped: true,
+  silent: true,
+  verbosity: true
+}
 
-    const dir = yield this.$.expand(globs, {mark: true})
+module.exports = function (fly, utils) {
+  fly.plugin('serve', {every: false, files: false}, function * (globs, opts) {
+    opts = Object.assign({}, defOpts, opts)
 
-    if (dir.length > 1 && defOpts.verbosity) {
-      this.$.alert(`Only the first found dir will be served`)
+    const dir = yield utils.expand(globs, {mark: true})
+
+    if (dir.length > 1 && opts.verbosity) {
+      utils.alert(`Only the first found dir will be served`)
     }
 
-    serve(dir[0], defOpts)
+    serve(dir[0], opts)
 
-    if (defOpts.verbosity) {
-      this.$.log(`${fmt.path(dir[0])} is served on ${fmt.path('localhost:')}${fmt.path(defOpts.port)}`)
+    if (opts.verbosity) {
+      utils.log(`${format(dir[0])} is served on ${format(`localhost:${opts.port}`)}`)
     }
-  }
+  })
 }
