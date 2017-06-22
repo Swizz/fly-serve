@@ -9,7 +9,7 @@ module.exports = {
     const defOpts = Object.assign({
       port: 3000,
       ignore: ['node_modules'],
-      unziped: true,
+      unzipped: true,
       silent: true,
       verbosity: true
     }, opts)
