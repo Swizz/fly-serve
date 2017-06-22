@@ -10,8 +10,7 @@ module.exports = {
       port: 3000,
       ignore: ['node_modules'],
       unzipped: true,
-      silent: true,
-      verbosity: true
+      silent: true
     }, opts)
 
     const dir = yield this.$.expand(globs, {mark: true})
